@@ -116,8 +116,9 @@ tag_archive:
 comments:
   provider: "custom"
 
+google
 analytics:
-  provider: "google"
+  provider: "google-gtag"
   google:
     tracking_id: "UA-178010206-1"
     anonymize_ip: false # default
