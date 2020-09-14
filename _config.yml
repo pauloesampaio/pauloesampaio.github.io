@@ -116,7 +116,8 @@ tag_archive:
 comments:
   provider: "custom"
 
-google
+google_site_verification: google-site-verification=kaANRGA3MIWr2xAQ4yKZJhxFmNUPllgzi6Q209rgbcQ
+
 analytics:
   provider: "google-gtag"
   google:
