@@ -116,10 +116,8 @@ tag_archive:
 comments:
   provider: "custom"
 
-google_site_verification: google-site-verification=kaANRGA3MIWr2xAQ4yKZJhxFmNUPllgzi6Q209rgbcQ
-
 analytics:
-  provider: "google-gtag"
+  provider: "google"
   google:
     tracking_id: "UA-178010206-1"
     anonymize_ip: false # default
