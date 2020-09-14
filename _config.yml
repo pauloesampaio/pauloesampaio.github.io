@@ -115,3 +115,9 @@ tag_archive:
 
 comments:
   provider: "custom"
+
+analytics:
+  provider: "google"
+  google:
+    tracking_id: "UA-178010206-1"
+    anonymize_ip: false # default
