@@ -13,77 +13,109 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
+
+remote_theme: mmistakes/minimal-mistakes@4.20.2
+minimal_mistakes_skin: default
+
+# Site settings
+locale: "en-US"
 title: Paulo Sampaio
-email: paulo.ed@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Paulo Sampaio's online porfolio. Data science, machine learning, computer vision and whatever else is on my mind! 
-twitter_username: sampaio_paulo
-github_username: pauloesampaio
-minimal_mistakes_skin: dark #default
+title_separator: "-"
+subtitle: Projects, ideas and a little about me
+description: Paulo Sampaio's online porfolio. Data science, machine learning, computer vision and whatever else is on my mind! 
+baseurl: "/"
+comments:
+  provider: "custom"
 search: true
 
-# Build settings
-markdown: kramdown
-remote_theme: mmistakes/minimal-mistakes@4.20.2
-# Outputting
-permalink: /:categories/:title/
-paginate: 5 # amount of posts to show
-paginate_path: /page:num/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+# SEO Related
+google_site_verification: "XEDt9F4XMhWbVsaFSHIsFpdoy1FC1PwIPHQ9ZPkbyq4"
 
-include:
-  - _pages
+# Social sharing
+twitter:
+  username: &twitter "sampaio_paulo"
+og_image: "assets/images/bio-photo.png"
+social:
+  type: Person
+  name: Paulo Sampaio
+  links:
+    - "https://www.linkedin.com/in/paulosampaio"
+    - "https://github.com/pauloesampaio"
+    - "https://instagram.com/paulo_sampaio"
+    - "https://twitter.com/sampaio_paulo"
+    - "https://www.facebook.com/paulo.ed"
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+# Analytics
+analytics:
+  provider: "google"
+  google:
+    tracking_id: "UA-178010206-1"
+    anonymize_ip: false # default
 
-# Plugins (previously gems:)
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jemoji
-  - jekyll-include-cache
-
+# Site author
 author:
   name   : "Paulo Sampaio"
   avatar : "/assets/images/bio-photo.jpg"
   bio    : "My awesome biography constrained to a sentence or two goes here."
   links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://pauloesampaio.github.io"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/sampaio_paulo"
+    - label: "LinkedIn"
+      icon: "fab fa-linkedin"
+      url: "https://www.linkedin.com/in/paulosampaio"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/pauloesampaio"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/paulo_sampaio"
-
-footer:
-  links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
+      url: "https://twitter.com/sampaio_paulo"
+
+# Footer
+footer:
+  links:
+    - label: "LinkedIn"
+      icon: "fab fa-linkedin"
+      url: "https://www.linkedin.com/in/paulosampaio"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
+      url: "https://github.com/pauloesampaio"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://instagram.com/paulo_sampaio"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/sampaio_paulo"
+
+# Reading files
+include:
+  - _pages
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /:collection/:path/
 
 defaults:
   # _posts
@@ -106,18 +138,18 @@ defaults:
       layout: single
       author_profile: true
 
-category_archive:
-  type: liquid
-  path: /categories/
-tag_archive:
-  type: liquid
-  path: /tags/
+# Outputting
+permalink: /:categories/:title/
+paginate: 5 # amount of posts to show
+paginate_path: /page:num/
+timezone: America/Sao_Paulo # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
-comments:
-  provider: "custom"
+# Plugins (previously gems:)
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache
 
-analytics:
-  provider: "google"
-  google:
-    tracking_id: "UA-178010206-1"
-    anonymize_ip: false # default
