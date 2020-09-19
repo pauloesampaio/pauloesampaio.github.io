@@ -10,7 +10,7 @@ sections:
 - type: jekyll-posts
   label: Posts
   create: all
-upload_dir: https://sa-east-1.amazonaws.com/paulo-blog-media
+upload_dir: ''
 public_path: https://sa-east-1.amazonaws.com/paulo-blog-media
 front_matter_path: ''
 use_front_matter_path: 
