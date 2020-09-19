@@ -27,13 +27,15 @@ baseurl: "/"
 comments:
   provider: "custom"
 search: true
+github: [metadata]
+repository: pauloesampaio/pauloesampaio.github.io
 
 # SEO Related
 google_site_verification: "XEDt9F4XMhWbVsaFSHIsFpdoy1FC1PwIPHQ9ZPkbyq4"
 
 # Social sharing
 twitter:
-  username: &twitter "sampaio_paulo"
+  username: "sampaio_paulo"
 og_image: "assets/images/bio-photo.png"
 social:
   type: Person
@@ -90,6 +92,7 @@ footer:
 # Reading files
 include:
   - _pages
+  - _posts
 encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
@@ -140,8 +143,8 @@ defaults:
 
 # Outputting
 permalink: /:categories/:title/
-paginate: 5 # amount of posts to show
-paginate_path: /page:num/
+paginate: 4 # amount of posts to show
+paginate_path: /_pages/page:num/
 timezone: America/Sao_Paulo # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 # Plugins (previously gems:)
