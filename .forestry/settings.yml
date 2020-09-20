@@ -11,7 +11,7 @@ sections:
   label: Posts
   create: all
 upload_dir: ''
-public_path: https://sa-east-1.amazonaws.com/paulo-blog-media
+public_path: ''
 front_matter_path: ''
 use_front_matter_path: 
 file_template: ":filename:"
