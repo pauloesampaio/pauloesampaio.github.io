@@ -9,7 +9,7 @@ categories:
 tags:
 - Jekyll
 header:
-  teaser: "/assets/images/teaser.jpg"
+  teaser: https://paulo-blog-media.s3-sa-east-1.amazonaws.com/posts/2020-09-15-using-jekyll/teaser_image.jpg
 classes: wide
 s3_bucket: https://paulo-blog-media.s3-sa-east-1.amazonaws.com/posts/2020-09-15-using-jekyll
 
