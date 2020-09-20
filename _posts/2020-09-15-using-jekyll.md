@@ -12,9 +12,10 @@ header:
   teaser: "/assets/images/teaser.jpg"
 classes: wide
 s3_bucket: https://paulo-blog-media.s3-sa-east-1.amazonaws.com/posts/2020-09-15-using-jekyll
----
 
 ---
+***
+
 I know, I should have done this year ago... but as they say, better late than never! So I have to create a website to showcase some of my work, to have it as a portfolio/CV.
 
 Requirements are clear:
@@ -31,9 +32,9 @@ I knew Jekyll as one of the most famous static sites generator so I thought I wo
 So Jekyll is a "static site generator", which means that you don't have to write the HTML or the CSS - you write your content on pure and simple markdown files and, given a web page template, Jekyll will create the final html for you.
 
 <figure style="width: 50%"  class="align-center">
-  <img src="{{ page.s3_bucket }}/ssg.jpg" alt="">
-  <figcaption>Static site generators</figcaption>
-</figure> 
+<img src="{{ page.s3_bucket }}/ssg.jpg" alt="">
+<figcaption>Static site generators</figcaption>
+</figure>
 
 There are lots of options around, some modern and strong competitors are Hugo and Gatsby, but as far as I'm aware, Jekyll is still the most popular static site generator and is known for its simplicity. It is the engine behind github pages, so its integration is seamless - basically you push your repo and your site is alive! And for free!
 
@@ -56,9 +57,9 @@ bundle exec jekyll serve
 Then open a browser and go to good old `localhost:4000/` and hopefully you'll see your brand new (but yet rather bland) website:
 
 <figure style="width: 75%"  class="align-center">
-  <img src="{{ page.s3_bucket }}/welcome_to_jekyll.jpg" alt="">
-  <figcaption>Well at least seems to be working!</figcaption>
-</figure> 
+<img src="{{ page.s3_bucket }}/welcome_to_jekyll.jpg" alt="">
+<figcaption>Well at least seems to be working!</figcaption>
+</figure>
 
 If you work with Windows, it might be trickier, since its Jekyll is ruby based. One solution is to work with docker - have jekyll running inside a container. I'm publishing a Dockerfile and a docker-compose on my repo to help you get going.
 
@@ -78,9 +79,9 @@ There is loads of pages dedicated do Jekyll themes, some paid, some free. Search
 Awesome! So I followed the quick start, made repo (quick tip, name it `<your_git_user_name>.github.io`), cloned had the template up and running on github pages in no time. This is what I saw on my github pages address:
 
 <figure style="width: 75%"  class="align-center">
-  <img src="{{ page.s3_bucket }}/mms.jpg" alt="">
-  <figcaption>Getting there!</figcaption>
-</figure> 
+<img src="{{ page.s3_bucket }}/mms.jpg" alt="">
+<figcaption>Getting there!</figcaption>
+</figure>
 
 Better, but still not what I wanted. Time to configure it!
 
@@ -106,8 +107,8 @@ All right, time to get our hands dirty. Let's start personalising our site!
 
 My folder structure looks like this:
 <figure style="width: 25%"  class="align-left">
-  <img src="{{ page.s3_bucket }}/structure.jpg" alt="">
-</figure> 
+<img src="{{ page.s3_bucket }}/structure.jpg" alt="">
+</figure>
 
 So there's a couple of important folder there:
 `_config.yml`: File that holds most configurations of your site (from aesthetics to SEO)
@@ -153,8 +154,8 @@ Ok, let's check what is going on here:
 
 This rendered, becomes this:
 <figure style="width: 75%"  class="align-center">
-  <img src="{{ page.s3_bucket }}/landing_page.jpg" alt="">
-</figure> 
+<img src="{{ page.s3_bucket }}/landing_page.jpg" alt="">
+</figure>
 
 * The title/subtitle on the top right, comes from the `_configuration.yml`
 * Navigation menu on the top right comes from the `_data\navigation.yml`. You can edit this file and define whatever you want on this menu
@@ -180,8 +181,8 @@ Sorry, but the page you were trying to view does not exist --- perhaps you can t
 
 We'll pretty standard right? Rendered looks like this:
 <figure style="width: 75%"  class="align-center">
-  <img src="{{ page.s3_bucket }}/404.jpg" alt="">
-</figure> 
+<img src="{{ page.s3_bucket }}/404.jpg" alt="">
+</figure>
 
 Notice the region on the left, with my bio picture and social links. This is defined by the `author_profile: true` on the front matter. It can be added to the defaults on the `_config.yml`.
 
@@ -224,26 +225,25 @@ Done! Awesome! So if you go to that page you'll see that... well you'll see noth
 This is interesting. I wanted to have a comments section and a simple contact form. For comments, I see that [Disqus](https://disqus.com/) seem to be the go to option, but I didn't wanted since there's some concerns about privacy and also on the free tier they put ads on your page. Nobody wants that, right?
 
 <figure style="width: 25%"  class="align-left">
-  <img src="{{ page.s3_bucket }}/remarkbox.jpg" alt="">
-</figure> 
-So I'm using [Remarkbox](https://www.remarkbox.com/), also free (maximum of one domain) but with no ads. This is not covered by the theme, so we have to set it up and create the page oursevled. To set it up, you enter you site url and they'll give you a html code. Now on the folder `_includes` create a folder named `comments providers` and inside it, add a file called `custom.html` with the html code you just got from remarkbox. 
+<img src="{{ page.s3_bucket }}/remarkbox.jpg" alt="">
+</figure>
+So I'm using [Remarkbox](https://www.remarkbox.com/), also free (maximum of one domain) but with no ads. This is not covered by the theme, so we have to set it up and create the page ourselves. To set it up, you enter you site url and they'll give you a html code. Now on the folder `_includes` create a folder named `comments providers` and inside it, add a file called `custom.html` with the html code you just got from remarkbox.
 
 Done.
 
 Now you can add comments sections like this:
 
 <figure style="width: 75%"  class="align-center">
-  <img src="{{ page.s3_bucket }}/comments.jpg" alt="">
-  <figcaption>Simple, effective and ads free!</figcaption>
-</figure> 
-
+<img src="{{ page.s3_bucket }}/comments.jpg" alt="">
+<figcaption>Simple, effective and ads free!</figcaption>
+</figure>
 
 For the contact form, I also relied on a 3rd party provider, in that case [Formspree](https://formspree.io/). The process is exactly the same. You sign up and it'll provide you with an html snippet. Again, on the `_includes` folder, you will create a html file called `contact.html`. Done, now you can add contact form like this to your pages:
 
 <figure style="width: 75%"  class="align-center">
-  <img src="{{ page.s3_bucket }}/contact_form.jpg" alt="">
-  <figcaption>No frills, no ads and free!</figcaption>
-</figure> 
+<img src="{{ page.s3_bucket }}/contact_form.jpg" alt="">
+<figcaption>No frills, no ads and free!</figcaption>
+</figure>
 
 Great! Now let's write a post!
 
@@ -252,8 +252,8 @@ Great! Now let's write a post!
 Let's start by adding a new file on the `_posts` folder. Jekyll expects that this filename follows the scheme `YYYY-MM-DD-` then your title, so for instance, I created `2020-09-15-using-jekyll.md`.
 
 <figure style="width: 75%"  class="align-center">
-  <img src="{{ page.s3_bucket }}/post_file.jpg" alt="">
-</figure> 
+<img src="{{ page.s3_bucket }}/post_file.jpg" alt="">
+</figure>
 
 Then comes the front matters, let's see. I did it like this:
 
@@ -274,22 +274,22 @@ Write your awesome mardown content here!
 
 Thats it! Remember our good old post list? So this is the time to check it! Now we have post, right, so it should be populated. Let's check:
 <figure style="width: 75%"  class="align-center">
-  <img src="{{ page.s3_bucket }}/post_list.jpg" alt="">
-  <figcaption>Yay! Looking good!</figcaption>
-</figure> 
+<img src="{{ page.s3_bucket }}/post_list.jpg" alt="">
+<figcaption>Yay! Looking good!</figcaption>
+</figure>
 
 See, now that you have a post, it is properly populated in a grid format with the teaser image!
 As for your post, it should also be there, let's check:
 <figure style="width: 75%"  class="align-center">
-  <img src="{{ page.s3_bucket }}/post.jpg" alt="">
-  <figcaption>And now you can call yourself a content creator!</figcaption>
-</figure> 
+<img src="{{ page.s3_bucket }}/post.jpg" alt="">
+<figcaption>And now you can call yourself a content creator!</figcaption>
+</figure>
 
 There you have it! Markdown has all sorts of cool formatting tricks like lists, formatted tables, code blocks and so on. I recommend taking a look at some documentation like [this one on github](https://guides.github.com/features/mastering-markdown/)
 
 ## Closing thoughts
 
-Well, that's it. I really enjoyed all the process so far and the output I got using only open source and free tools. I know this is almost like coding, so it might not be your cup of tea if you are not used to it, but if you have any familiarity with coding, it is definitely worth the shot. There is couple of things I want to try now, like embedding interactive plots (using plotly) and connecting to a CMS (probably [forestry](https://forestry.io/)).
+Well, that's it. I really enjoyed all the process so far and the output I got using only open source and free tools. I know this is almost like coding, so it might not be your cup of tea if you are not used to it, but if you have any familiarity with coding, it is definitely worth the shot. There is couple of things I want to try now, like embedding interactive plots (using plotly), moving assets to s3 and connecting to a CMS (probably [forestry](https://forestry.io/)).
 
 Notice that I barely touched the templates itself, I basically just customised it. I know there is a lot of powerful customisations that can be done on the templates itself. Also, there's a lot of plugins to add more functionalities but, honestly, for what I want this is more than I bargained for!!
 
