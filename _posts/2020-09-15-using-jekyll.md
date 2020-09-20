@@ -10,6 +10,7 @@ tags:
 header:
   teaser: /assets/images/teaser.jpg
 classes: wide
+s3_bucket: https://paulo-blog-media.s3-sa-east-1.amazonaws.com/posts/2020-09-15-using-jekyll
 ---
 
 I know, I should have done this year ago... but as they say, better late than never! So I have to create a website to showcase some of my work, to have it as a portfolio/CV. 
@@ -27,7 +28,7 @@ I knew Jekyll as one of the most famous static sites generator so I thought I wo
 So Jekyll is a "static site generator", which means that you don't have to write the HTML or the CSS - you write your content on pure and simple markdown files and, given a web page template, Jekyll will create the final html for you. 
 
 <figure style="width: 50%"  class="align-center">
-  <img src="/assets/images/writing_this_site/ssg.jpg" alt="">
+  <img src="{{ page.s3_bucket }}/ssg.jpg" alt="">
   <figcaption>Static site generators</figcaption>
 </figure> 
 
@@ -52,7 +53,7 @@ bundle exec jekyll serve
 Then open a browser and go to good old `localhost:4000/` and hopefully you`ll see your brand new (but yet rather bland) website:
 
 <figure style="width: 75%"  class="align-center">
-  <img src="/assets/images/writing_this_site/welcome_to_jekyll.jpg" alt="">
+  <img src="{{ page.s3_bucket }}/welcome_to_jekyll.jpg" alt="">
   <figcaption>Well at least seems to be working!</figcaption>
 </figure> 
 
@@ -74,7 +75,7 @@ There is loads of pages dedicated do Jekyll themes, some paid, some free. Search
  Awesome! So I followed the quick start, made repo (quick tip, name it `<your_git_user_name>.github.io`), cloned had the template up and running on github pages in no time. This is what I saw on my github pages address:
 
 <figure style="width: 75%"  class="align-center">
-  <img src="/assets/images/writing_this_site/mms.jpg" alt="">
+  <img src="{{ page.s3_bucket }}/mms.jpg" alt="">
   <figcaption>Getting there!</figcaption>
 </figure> 
 
@@ -103,7 +104,7 @@ All right, time to get our hands dirty. Let's start personalizing our site!
 
 My folder structure looks like this:
 <figure style="width: 25%"  class="align-left">
-  <img src="/assets/images/writing_this_site/structure.jpg" alt="">
+  <img src="{{ page.s3_bucket }}/structure.jpg" alt="">
 </figure> 
 
 So there's a couple of important folder there:
@@ -148,7 +149,7 @@ Ok, let's check what is going on here:
 
 This rendered, becomes this:
 <figure style="width: 75%"  class="align-center">
-  <img src="/assets/images/writing_this_site/landing_page.jpg" alt="">
+  <img src="{{ page.s3_bucket }}/landing_page.jpg" alt="">
 </figure> 
 
 This is pretty much what I wanted! Notice that there's a couple of other cool things were added automatically here: 
@@ -175,7 +176,7 @@ Sorry, but the page you were trying to view does not exist --- perhaps you can t
 
 We'll pretty standard right? Rendered looks like this:
 <figure style="width: 75%"  class="align-center">
-  <img src="/assets/images/writing_this_site/404.jpg" alt="">
+  <img src="{{ page.s3_bucket }}/404.jpg" alt="">
 </figure> 
 
 Notice the region on the left, with my bio picture and social links. This is defined by the `author_profile: true` on the front matter. It can be added to the defaults on the `_config.yml`.
@@ -219,7 +220,7 @@ Done! Awesome! So if you go to that page you'll see that... well you'll see noth
 This is interesting. I wanted to have a comments section and a simple contact form. For comments, I see that [Disqus](https://disqus.com/) seem to be the go to option, but I didn't wanted since there's some concerns about privacy and also on the free tier they put ads on your page. Nobody wants that, right? 
 
 <figure style="width: 25%"  class="align-left">
-  <img src="/assets/images/writing_this_site/remarkbox.jpg" alt="">
+  <img src="{{ page.s3_bucket }}/remarkbox.jpg" alt="">
 </figure> 
 So I'm using [Remarkbox](https://www.remarkbox.com/), also free (maximum of one domain) but with no ads. This is not covered by the theme, so we have to set it up and create the page oursevled. To set it up, you enter you site url and they'll give you a html code. Now on the folder `_includes` create a folder named `comments providers` and inside it, add a file called `custom.html` with the html code you just got from remarkbox. 
 
@@ -229,7 +230,7 @@ Now you can add comments sections like this:
 
 
 <figure style="width: 75%"  class="align-center">
-  <img src="/assets/images/writing_this_site/comments.jpg" alt="">
+  <img src="{{ page.s3_bucket }}/comments.jpg" alt="">
   <figcaption>Simple, effective and ads free!</figcaption>
 </figure> 
 
@@ -237,7 +238,7 @@ Now you can add comments sections like this:
 For the contact form, I also relied on a 3rd party provider, in that case [Formspree](https://formspree.io/). The process is exactly the same. You sign up and it'll provide you with an html snippet. Again, on the `_includes` folder, you will create a html file called `contact.html`. Done, now you can add contact form like this to your pages:
 
 <figure style="width: 75%"  class="align-center">
-  <img src="/assets/images/writing_this_site/contact_form.jpg" alt="">
+  <img src="{{ page.s3_bucket }}/contact_form.jpg" alt="">
   <figcaption>No frills, no ads and free!</figcaption>
 </figure> 
 
@@ -248,7 +249,7 @@ Great! Now let's write a post!
 Let's start by adding a new file on the `_posts` folder. Jekyll expects that this filename follows the scheme `YYYY-MM-DD-` then your title, so for instance, I created `2020-09-15-using-jekyll.md`.
 
 <figure style="width: 75%"  class="align-center">
-  <img src="/assets/images/writing_this_site/post_file.jpg" alt="">
+  <img src="{{ page.s3_bucket }}/post_file.jpg" alt="">
 </figure> 
 
 Then comes the front matters, let's see. I did it like this:
@@ -269,14 +270,14 @@ Write your awesome mardown content here!
 
 Thats it! Remember our good old post list? So this is the time to check it! Now we have post, right, so it should be populated. Let's check:
 <figure style="width: 75%"  class="align-center">
-  <img src="/assets/images/writing_this_site/post_list.jpg" alt="">
+  <img src="{{ page.s3_bucket }}/post_list.jpg" alt="">
   <figcaption>Yay! Looking good!</figcaption>
 </figure> 
 
 See, now that you have a post, it is properly populated in a grid format with the teaser image!
 As for your post, it should also be there, let's check:
 <figure style="width: 75%"  class="align-center">
-  <img src="/assets/images/writing_this_site/post.jpg" alt="">
+  <img src="{{ page.s3_bucket }}/post.jpg" alt="">
   <figcaption>And now you can call yourself a content creator!</figcaption>
 </figure> 
 
