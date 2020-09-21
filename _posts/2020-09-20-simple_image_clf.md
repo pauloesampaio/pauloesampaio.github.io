@@ -45,7 +45,7 @@ A couple of tricks:
 <img src="{{ page.s3_bucket }}/deploying.jpg" alt="">
 <figcaption>Deployed and public simple image classifier</figcaption>
 </figure>
-- I created a `setup.sh` with streamlit configuration. I got this from the [streamlit docs]()
+- I created a `setup.sh` with streamlit configuration. I got this from the [streamlit docs](https://docs.streamlit.io/en/stable/streamlit_faq.html?highlight=deploy#deploying-streamlit)
 - On the `Procfile`, I run the `setup.sh` and then the streamlit app
 
 Well, that's basically it!
