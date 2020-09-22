@@ -3,6 +3,7 @@ permalink: /about/
 title: "About"
 classes: wide
 ---
+***
 
 <figure style="width: 30%"  class="align-left">
 <img src="/assets/images/paulo_sampaio.jpg" alt="">
