@@ -12,9 +12,13 @@ header:
   teaser: https://paulo-blog-media.s3-sa-east-1.amazonaws.com/posts/2020-09-15-using-jekyll/teaser_image.jpg
 classes: wide
 s3_bucket: https://paulo-blog-media.s3-sa-east-1.amazonaws.com/posts/2020-09-15-using-jekyll
+repo_name: pauloesampaio.github.io
 ---
 ***
 
+{% if page.repo_name %}
+  {% include repo_card.html %}
+{% endif %}
 I know, I should have done this year ago... but as they say, better late than never! So I have to create a website to showcase some of my work, to have it as a portfolio/CV.
 
 Requirements are clear:

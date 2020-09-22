@@ -13,7 +13,11 @@ header:
   teaser: https://paulo-blog-media.s3-sa-east-1.amazonaws.com/posts/2020-09-20-simple-image-clf/teaser_image.jpg
 classes: wide
 s3_bucket: https://paulo-blog-media.s3-sa-east-1.amazonaws.com/posts/2020-09-20-simple-image-clf
+repo_name: simple_image_clf
 ---
+***
+
+{% include repo_card.html %}
 
 So everybody was talking about [streamlit](https://www.streamlit.io/) and how easy it was to create an "app" (more like a simple front end) for data science projects, so I wanted to test it. Before, usually I would do that using [flask](https://flask.palletsprojects.com/en/1.1.x/) or [dash](https://plotly.com/dash/) and I got to say... Streamlit is waaaay simpler and straight to the point. 
 

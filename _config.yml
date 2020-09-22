@@ -27,8 +27,8 @@ baseurl: "/"
 comments:
   provider: "custom"
 search: true
-github: [metadata]
-repository: pauloesampaio/pauloesampaio.github.io
+github_user: pauloesampaio
+repository: "pauloesampaio/pauloesampaio.github.io"
 
 # SEO Related
 google_site_verification: "XEDt9F4XMhWbVsaFSHIsFpdoy1FC1PwIPHQ9ZPkbyq4"
@@ -155,4 +155,5 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
+  - jekyll-github-metadata
 
