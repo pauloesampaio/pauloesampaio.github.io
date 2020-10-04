@@ -1,5 +1,5 @@
 ---
-title: Deploying simple image classifier to Heroku (tensorflow, stramlit and heroku)
+title: Deploying simple image classifier to Heroku (tensorflow, streamlit and heroku)
 excerpt: I wanted to test streamlit as a simple front end for a pre-trained image classification model. In order to do a proper test, deployed it to Heroku.
 excerpt_separator: "<!--more-->"
 layout: single
