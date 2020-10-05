@@ -1,6 +1,6 @@
 ---
 title: Automate cloud deployment with Terraform and Ansible
-excerpt: Terraform and Ansible are "infrastructure as code" tools. Combining them you can automate provisioning and deployment of apps. Here I give a quick example using AWS and GCP.
+excerpt: Terraform and Ansible are "infrastructure as code" tools. Combining them you can automate provisioning and deployment of apps.
 excerpt_separator: "<!--more-->"
 layout: single
 categories:
