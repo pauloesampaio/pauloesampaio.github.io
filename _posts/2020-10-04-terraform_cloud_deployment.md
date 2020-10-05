@@ -22,7 +22,7 @@ repo_name: cloud_deploy_with_terraform
 
 {% include repo_card.html %}
 
-So you have you awesome app and now it is time to make it available to the world, right? Sure, you can go on AWS console, fire up an instance, ssh into it, install all dependencies and requirements, pray for no version problems, clone the repo and run. Easy enough. Then when you want to deploy to other server or fix anything, you have do it all over again... Or you can automate it all using all these "infrastructure as code" tools!
+So you have you awesome app and now it is time to make it available to the world, right? Sure, you can go on AWS console, fire up an instance, ssh into it, install all dependencies and requirements, pray for no version problems, clone the repo and run. Easy enough. Then when you want to deploy to other server or fix anything, you have do it all over again... Or you can automate it all using all these ["infrastructure as code"](https://en.wikipedia.org/wiki/Infrastructure_as_code) tools!
 
 ## Infrastructure as code
 
@@ -30,15 +30,15 @@ When you are deploying you basically follow a couple of steps. The idea here is 
 
 ### Terraform
 
-Terraform helps you on creating infrastructure. So you can define provider, instance type, OS image, network setup so on. Naturally you need you have you ssh keys and credentials already setup, so pay attention to this, but after that, it works like a breeze!
+[Terraform](https://www.terraform.io/) helps you on creating infrastructure. So you can define provider, instance type, OS image, network setup so on. Naturally you need you have you ssh keys and credentials already setup, so pay attention to this, but after that, it works like a breeze!
 
 ### Ansible
 
-Ansible helps configuring your newly created instance. You define literally each step, like "update apt-get", "install dependencies", "add users", "run commands" and so on. It goes step by step and let you know any problems so it is easy to track and solve.
+[Ansible](https://www.ansible.com/) helps configuring your newly created instance. You define literally each step, like "update apt-get", "install dependencies", "add users", "run commands" and so on. It goes step by step and let you know any problems so it is easy to track and solve.
 
 ### Docker
 
-Docker is one of my favorite tools - it helps you by creating an isolated environment (container) for you to run your app. This container encapsulates everything the app needs, so it solves the famous "it works on my machine" problem - the container is like a mini machine running your app. Super convenient and easy to use.
+Not sure if I would put it on the "infrastructure as code" bucket, [Docker](https://www.docker.com/) is one of my favorite tools - it helps you by creating an isolated environment (container) for you to run your app. This container encapsulates everything the app needs, so it solves the famous "it works on my machine" problem - the container is like a mini machine running your app. Super convenient and easy to use.
 
 ## So what is going on here
 
