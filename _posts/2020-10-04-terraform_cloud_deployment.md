@@ -38,7 +38,7 @@ When you are deploying you basically follow a couple of steps. The idea here is 
 
 ### Docker
 
-Not sure if I would put it on the "infrastructure as code" bucket, [Docker](https://www.docker.com/) is one of my favorite tools - it helps you by creating an isolated environment (container) for you to run your app. This container encapsulates everything the app needs, so it solves the famous "it works on my machine" problem - the container is like a mini machine running your app. Super convenient and easy to use.
+Not sure if I would put it on the "infrastructure as code" bucket, but [Docker](https://www.docker.com/) is one of my favorite tools - it helps you by creating an isolated environment (container) for you to run your app. This container encapsulates everything the app needs, so it solves the famous "it works on my machine" problem - the container is like a mini machine running your app. Super convenient and easy to use.
 
 ## So what is going on here
 
