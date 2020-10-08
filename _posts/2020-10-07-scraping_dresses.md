@@ -47,7 +47,7 @@ In a nutshell, [splash](https://github.com/scrapinghub/splash) is like a browser
 
 ### MongoDB
 
-[MongoDB](https://www.mongodb.com/) is a NoSQL database that stores json-like documents. Also has a huge community, easy to integrate with python and offers a cloud-hosted instance with a fair free tier. 
+[MongoDB](https://www.mongodb.com/) is a NoSQL database that stores json-like documents. Also has a huge community, easy to integrate with python and offers a cloud-hosted instance with a fair free tier.
 
 ### Docker
 
