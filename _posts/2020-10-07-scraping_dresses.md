@@ -55,7 +55,7 @@ Probably my favorite dev tool, [docker](https://www.docker.com/) creates an isol
 
 ## Connecting the dots
 
-So, as mentioned, the website uses javascript, so I'm using splash to mimic a browser. Splash already runs in a container (image provided by [scrapinghub](https://hub.docker.com/r/scrapinghub/splash)) and I decided to run scrapy also from a container, so I put together a minimal `Dockerfile` with scrapy and pymongo and a `docker-compose.yml` to run it . This makes easier to deploy wherever I want (or even run locally isolated on my machine). I'm saving the results to a MongoDB cloud collection, with each `product_id` as `document_id`.
+So, as mentioned, the website uses javascript, so I'm using splash to mimic a browser. Splash already runs in a container (image provided by [scrapinghub](https://hub.docker.com/r/scrapinghub/splash)) and I decided to run scrapy also from a container, so I put together a minimal [`Dockerfile`](https://github.com/pauloesampaio/scraping_dresses/blob/master/Dockerfile) with scrapy and pymongo and a [`docker-compose.yml`](https://github.com/pauloesampaio/scraping_dresses/blob/master/docker-compose.yml) to run it . This makes it easier to deploy wherever I want (or even run locally isolated on my machine). I'm saving the results to a MongoDB cloud collection, with each `product_id` as `document_id`.
 
 ## Closing thoughts
 
