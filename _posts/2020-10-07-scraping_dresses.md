@@ -24,9 +24,10 @@ repo_name: scraping_dresses
 
 So I was a senior data scientist at this lovely retail tech company that had a lot of data coming from crawlers monitoring e-commerces. I worked with NLP, interpreting the products descriptions and with computer vision, identifying colours, patterns, details and so on. The thing is - I never actually built the crawlers, so I wanted to try to do it myself!
 
-I got a [brazilian retailer website](https://www.lojasrenner.com.br/c/feminino/vestidos/-/N-cg003xZ1hwylc0/p1) that uses javascrit and have pagination, and I wanted to get all products from all the pages on the dresses category, with and save the following information to a [MongoDB](https://www.mongodb.com/) database:
+I got a couple of brazilian retailer website ([this one](https://www.lojasrenner.com.br/c/feminino/vestidos/-/N-cg003xZ1hwylc0/p1) and [this one](https://amaro.com/br/pt/c/roupas-femininas/vestidos)) that uses javascript and have pagination, and I wanted to get all products from all the pages on the dresses category and save the following information to a [MongoDB](https://www.mongodb.com/) database:
 
-- Prodcut id
+- Product id
+- Retailer id
 - Product url
 - Product name
 - Product price
@@ -59,6 +60,6 @@ So, as mentioned, the website uses javascript, so I'm using splash to mimic a br
 
 ## Closing thoughts
 
-So being able to scrape websites is a great skill to have and empowers one to build data apps, monitor websites, create event-based alarms, sky is the limit! For instance, since I'm into computer vision, here I'm focusing on getting the product images urls to use in another examples there will be published here - so if there's no link to other artiles here right now, come back soon!!
+So being able to scrape websites is a great skill to have and empowers one to build data apps, monitor websites, create event-based alarms, sky is the limit! For instance, since I'm into computer vision, here I'm focusing on getting the product images urls to use in another examples there will be published here - so if there's no link to other articles here right now, come back soon!!
 
 Hope you enjoy and try to build something yourself!
