@@ -61,6 +61,22 @@ Putting on a scheme, face detection + variance based trimming works like this:
 <figcaption>Pipeline steps</figcaption>
 </figure>
 
+## Run in a docker container
+
+As always I made a `Docker` file and `docker-compose`, so you can easily run this in a container by doing:
+
+```bash
+docker-compose build
+```
+
+To build the image and
+
+```bash
+docker-compose up
+```
+
+To run it
+
 ## Closing thoughts
 
 Using multi-processing or multi-threading can drastically speed up running time of any code and should be used whenever possible. One caveat of the [python standard implementation](https://docs.python.org/3/library/concurrent.futures.html) is that it expects to receive one parameter, that's why I'm using a helper function and passing a list [here](https://github.com/pauloesampaio/pictures_downloader/blob/03c0fb3e4cd325094e310fc0f96e6a1c7973b214/downloader/downloader_functions.py#L83). Also I wanted to split the download and preprocess in 2 different steps in metaflow, but I had some problems creating a queue and passing the images in batches instead. It seems to work when coupled with AWS, but I wanted to create a local running example. In any case, it is a good starting point for anyone wanting to play around with downloading and processing images.
