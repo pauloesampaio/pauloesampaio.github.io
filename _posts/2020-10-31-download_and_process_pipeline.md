@@ -1,6 +1,6 @@
 ---
 title: Multi-thread image download and process pipeline using metaflow and OpenCV
-excerpt: A lot of times you have to download images from the internet. Here's my attempt to use multi-thread to speed it up. As a bonus, let's do some simple pre-process.
+excerpt: A lot of times you have to download images from the internet. Here's my attempt to use multi-thread to speed it up. As a bonus, a bit of image pre-processing.
 excerpt_separator: "<!--more-->"
 layout: single
 categories:
