@@ -51,13 +51,13 @@ These vector are stored, alongside the filepaths of all images vectorized and, i
 If docker is your thing, I'm providing a `Dockerfile` and a `docker-compose.yml` to make it easier to run. You can simple
 
 - Adjust the `config.yml` to your use case
-- run `docker-compose up``
+- run `docker-compose up`
 
 And that's it. If you prefer running on your own environment, I'm providing the `requirements.txt` and you can simple run `python image_vectorizer_pipeline.py run` and you should be good.
 
 ## A simple usage example
 
-I provided the `t-sne_plot.py` python script to get these vector and build a t-SNE plot. I'm using `bokeh` to run the scatterplot just because it has a really good hover function that allow me to show of a thumbnail of the respective images, making it easier to understand the similarity of vectors in a same region. An example below:
+I provided the `t-sne_plot.py` python script to get these vector and build a t-SNE plot. I'm using `bokeh` to run the scatter plot just because it has a really good hover function that allow me to show of a thumbnail of the respective images, making it easier to understand the similarity of vectors in a same region. An example below:
 
 <figure style="width: 75%"  class="align-center">
 <img src="{{ page.s3_bucket }}/tsne.jpg" alt="">
