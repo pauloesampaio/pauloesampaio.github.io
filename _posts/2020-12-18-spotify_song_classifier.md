@@ -25,7 +25,7 @@ One time my wife and I were watching some concert on TV and we joked about overl
 
 ## Project set up
 
-I'll be using the [spotipy library](https://spotipy.readthedocs.io/en/2.16.1/) to connect to Spotify and query their APIs. In order to access the endpoints, you need to register on the [Spotify for developers](https://developer.spotify.com/), so you have a CLIENT_ID, CLIENT_SECRET and REDIRECT_URI, which should be stored on the `./credentials/credentials.json`. You also need to have a user tokens for each one of the users that you want to access the songs. The [Spotipy documentation](https://spotipy.readthedocs.io/en/2.16.1/#authorization-code-flow) describes this process quite well and I suggest you to take a look at it and follow a couple of examples on how to authenticate. In any case, I'm providing a template for the credentials file on `./credentials/credentials.json`.
+I'll be using the [spotipy library](https://spotipy.readthedocs.io/en/2.16.1/) to connect to Spotify and query their APIs. In order to access the endpoints, you need to register on the [Spotify for developers](https://developer.spotify.com/), so you have a `CLIENT_ID, CLIENT_SECRET` and `REDIRECT_URI`, which should be stored on the `./credentials/credentials.json`. You also need to have a user tokens for each one of the users that you want to access the songs. The [Spotipy documentation](https://spotipy.readthedocs.io/en/2.16.1/#authorization-code-flow) describes this process quite well and I suggest you to take a look at it and follow a couple of examples on how to authenticate. In any case, I'm providing a template for the credentials file on `./credentials/credentials.json`.
 
 All configurations are on the `./config/config.yml` file. The main blocks are:
 
