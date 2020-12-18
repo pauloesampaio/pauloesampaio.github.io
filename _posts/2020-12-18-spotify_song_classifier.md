@@ -27,10 +27,10 @@ One time my wife and I were watching some concert on TV and we joked about overl
 
 I'll be using the [spotipy library](https://spotipy.readthedocs.io/en/2.16.1/) to connect to Spotify and query their APIs. In order to access the endpoints, you need to register on the [Spotify for developers](https://developer.spotify.com/), so you have a `CLIENT_ID, CLIENT_SECRET` and `REDIRECT_URI`, which should be stored on the `./credentials/credentials.json`. You also need to have a user tokens for each one of the users that you want to access the songs. The [Spotipy documentation](https://spotipy.readthedocs.io/en/2.16.1/#authorization-code-flow) describes this process quite well and I suggest you to take a look at it and follow a couple of examples on how to authenticate. In any case, I'm providing a template for the credentials file on `./credentials/credentials.json`.
 
-All configurations are on the `./config/config.yml` file. The main blocks are:
+All configurations are on the `./config/config.yml` file. The main groups are:
 
 - paths configurations: Paths to save data, models and where are the credentials
-- users: Spotify user ID you want to use
+- users: Spotify user IDs you want to use
 - model: Instructions on how to build the neural network (number of layers, activation function)
 - features: Which features to use and how to perform simple feature pre processing
 
@@ -66,7 +66,7 @@ I'm providing a `Dockerfile` image and a `docker-compose.yml` in case you want t
 
 ## API rate limit
 
-As many APIs, there is a rate limit, so if your `get_data` starts to throw 429 or 503, most likely you hit the API too much. Wait for a bit before running it again. I never had this problem since I'm just getting around 500 songs, but I heard some issues about it.
+As many APIs, there is a rate limit, so if your `get_data` starts to throw `429` or `503`, most likely you hit the API too much. Wait for a bit before running it again. I never had this problem since I'm just getting around 500 songs, but I heard some issues about it.
 
 ## Closing thoughts
 
