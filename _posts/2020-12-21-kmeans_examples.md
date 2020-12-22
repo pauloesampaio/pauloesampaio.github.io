@@ -1,5 +1,5 @@
 ---
-title: Image quantization with k-Means
+title: Retro style image quantization with k-Means
 excerpt: Another educational post - I needed to explain k-means to some students and wanted a different use case to make it more engaging.
 excerpt_separator: "<!--more-->"
 layout: single
@@ -17,6 +17,8 @@ classes: wide
 s3_bucket: https://paulo-blog-media.s3-sa-east-1.amazonaws.com/posts/2020-12-21-kmeans_examples
 repo_name: kmeans
 ---
+
+{% include repo_card.html %}
 
 I needed to talk about [k-means](https://en.wikipedia.org/wiki/K-means_clustering) to a group of students. Cool, I really enjoy talking with students and k-means is something easy, simple to explain and truly useful. I wanted to try to showcase something different - there are a lot of k-means examples around talking about users or product segmentation. Naturally I could use my [MSc dissertation](https://upcommons.upc.edu/handle/2117/77312), that used k-means to segment image regions... but this was 2014, there are more interesting ways to segment images and, to be honest, I am a bit tired of using it as example. So I was looking at some retro games and remembered when I was playing computer games in the 80s, and the coolest thing was when I changed my monochrome CRT monitor to an awesome 16 colors EGA monitor! So using k-means to downgrade a current 8-bit, 16 Million colors image to a 16 color old school image sounded like an interesting use case to explain it!
 
