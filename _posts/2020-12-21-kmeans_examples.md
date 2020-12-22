@@ -30,16 +30,16 @@ It is easy:
 - Fitting a k-means instance to cluster pixels into the number of colours you desire to see. 16 for instance.
 - Get the label assigned to each one of the pixels and reshape it back to the original image shape, and color them using the cluster centroid.
 
-Probably it would be better to use the medoid instead of the centroid, but I will leave that for another conversation. In any case, an example of result:
-
 That's it.
 !["Lechuck"](https://paulo-blog-media.s3-sa-east-1.amazonaws.com/posts/2020-12-21-kmeans_examples/lechuck.jpg)Basically [LeChuck](https://monkeyisland.fandom.com/wiki/LeChuck), from the 80s classic Monkey Island
 
+Probably it would be better to use the medoid instead of the centroid, but I will leave that for another conversation.
+
 ## Running
 
-I'm providing a [streamlit](www.streamlit.io) app so you can experiment with any image url and any number of clusters.
+I'm providing a [streamlit](https://www.streamlit.io/) app so you can experiment with any image url and any number of clusters.
 
-Install all the requirements listed on the `requirements.txt` and do a `streamlit run k_means_demo.py` and you should be good to go!
+Install all the requirements listed on the `requirements.txt`, do a `streamlit run k_means_demo.py` and you should be good to go!
 
 If you are into `docker`, I'm providing a `Dockerfile`and a `docker-compose.yml` so you can easily run with `docker-compose up`.
 
