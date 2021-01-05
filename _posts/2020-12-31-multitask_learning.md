@@ -40,7 +40,7 @@ In my experience, using good pre-trained architectures, plugging multiple classi
 - With model: binary task, if the picture contains a human model or not
 - Color: multi-class task, classifying main dominant color into a set of 21 possible colors
 
-In terms of accuracy, the results running as single tasks or multi task, as can be seen below:
+In terms of accuracy, the results running as single tasks or multi task are similar, as can be seen below:
 
 <figure style="width: 50%"  class="align-center">
 <img src="{{ page.s3_bucket }}/accuracy.jpg" alt="">
@@ -57,7 +57,7 @@ As a nice side effect, training all layers end up generating better embeddings, 
 
 ## How to run it
 
-You need to provide a dataframe like the following:
+You need to provide a dataframe like the following, having a column for image path and labels for each one of the tasks:
 
 <figure style="width: 75%"  class="align-center">
 <img src="{{ page.s3_bucket }}/csv.png" alt="">
