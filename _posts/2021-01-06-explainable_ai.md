@@ -64,7 +64,6 @@ This should give you the following plot:
 
 <figure style="width: 75%"  class="align-center">
 <img src="{{ page.s3_bucket }}/shap_plot.jpg" alt="">
-<figcaption>Shap summary plot</figcaption>
 </figure>
 
 There's a lot of information in this plot, let's take a careful look at it:
