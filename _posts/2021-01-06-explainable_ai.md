@@ -38,7 +38,7 @@ We'll use the data from the [Spotify song classification post](https://pauloesam
 - danceability: how suitable a track is for dancing
 - energy: Energy represents a perceptual measure of intensity and activity
 - loudness: The overall loudness of a track in decibels (dB)
-- speechiness: Speechiness detects the presence of spoken words in a track
+- speechiness: Detects the presence of spoken words in a track
 - acousticness: A confidence measure of whether the track is acoustic
 - instrumentalness: Predicts whether a track contains no vocals
 - liveness: Detects the presence of an audience in the recording
@@ -47,7 +47,7 @@ We'll use the data from the [Spotify song classification post](https://pauloesam
 - duration_ms: The duration of the track in milliseconds
 
 Notice that `key`, `mode` and `time signature` are categorical while the others are numeric.
-We'll train a simple model with [CatBoost](https://catboost.ai/), particularly by how it deals with categoricals without the need of one-hot-encoding, making the exercise of interpretation even more clear. I'll not pass through all the training steps here since this post is focused on the shap. What you need to know is that this is a binary classification model, where 0 represents a song that my wife would appreciate while a value of 1 represents a song more suited to my taste.
+We'll train a simple model with [CatBoost](https://catboost.ai/), particularly by how it deals with categorical variables without the need of one-hot-encoding, making the exercise of interpretation even more clear. I'll not pass through all the training steps here since this post is focused on the shap. What you need to know is that this is a binary classification model, where 0 represents a song that my wife would appreciate while a value of 1 represents a song more suited to my taste.
 
 ### Getting the shap values
 
@@ -64,7 +64,7 @@ This should give you the following plot:
 
 <figure style="width: 75%"  class="align-center">
 <img src="{{ page.s3_bucket }}/shap_plot.jpg" alt="">
-<figcaption>Shap "feature importance" plot</figcaption>
+<figcaption>Shap summary plot</figcaption>
 </figure>
 
 There's a lot of information in this plot, let's take a careful look at it:
@@ -81,7 +81,7 @@ There's a lot of information in this plot, let's take a careful look at it:
 So let's see if we got this right:
 
 - Energy is the most important feature and it seems that the more energetic a song is, higher the probability the model calculates for it to be on my playlist.
-- On the other hand, it seems that the model considers that the acoustic songs are more likely to be on my wife's playlist. This makes sense since, in a way, energy and acousticness can almost be seen as opposites. 
+- On the other hand, it seems that the model considers that the acoustic songs are more likely to be on my wife's playlist. This makes sense since, in a way, energy and acousticness can almost be seen as opposites.
 - Danceability is an interesting one: it definitely weights more towards my wife's, but notice how there some red dots on the positive side. This happens because features are not isolated, they have interactions with other features. So for instance, danceability might be positive for me if a song is acoustic.
 - Key doesn't really matter. It makes sense, right, we both like songs in diverse keys. It would be weird if only I care for songs in B flat or something like that. Same for time signature (most of the songs are 4/4 anyway), instrumentalness (I don't think there are many instrumental songs on these playlists), mode (same as key, we don't really care if is major or minor) and duration. Those features could probably be dropped, but I would do further analysis before that.
 
@@ -125,7 +125,7 @@ Decision Plot
 <img src="{{ page.s3_bucket }}/records_on_decision.jpg" alt="">
 </figure>
 
-Here it is the opposite! Again, we start on the base value of 0.688 but everything drives it down to 0.18. The most impactful again are energy and acousticness. 
+Here it is the opposite! Again, we start on the base value of 0.688 but everything drives it down to 0.18. The most impactful again are energy and acousticness.
 
 Now let's check a song that both of us like.
 **Enter sandman (Metallica)**
@@ -139,7 +139,7 @@ Decision Plot
 <img src="{{ page.s3_bucket }}/sandman_decision.jpg" alt="">
 </figure>
 
-That's an interesting one! The decision was mainly due to duration! Ant it is true: Great song, but with its 6 minutes, it bores me a bit so it makes sense that its duration is what basically makes it a draw between the 2 of us. Interesting enough, it was actually from my wife's playlist! 
+That's an interesting one! The decision was mainly due to duration! Ant it is true: Great song, but with its 6 minutes, it bores me a bit so it makes sense that its duration is what basically makes it a draw between the 2 of us. Interesting enough, it was actually from my wife's playlist!
 
 You can even visualize all songs in the decision plot, which can be interesting to detect the "overall decision path" or even to check some outliers. In our case, it doesn't seem to have anything too much out of the ordinary:
 
