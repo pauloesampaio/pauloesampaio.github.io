@@ -120,7 +120,7 @@ Then, you can run `streamlit run front_end.py` to run the web application where 
 That's it!
 
 <figure style="width: 50%"  class="align-center">
-<img src="{{ page.s3_bucket }}/floral.jpg" alt="">
+<img src="{{ page.s3_bucket }}/plain.jpg" alt="">
 </figure>
 
 ## Closing thoughts
