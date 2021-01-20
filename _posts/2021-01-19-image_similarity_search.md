@@ -23,7 +23,7 @@ repo_name: image_similarity_search
 
 {% include repo_card.html %}
 
-In the [multitask classification post](https://pauloesampaio.github.io/posts/2020-12-31-multitask_learning/) I mentioned how it should help the embedding, since the model takes into account all tasks and therefore would generate a more holistic representation. That's exactly what we will test today. The model we trained is capable of detecting finish type, neckline and sleeve length. My vector space should represent well enough this features so if I have a vector of a striped long sleeved crew neckline dress, the nearest vectors should also be products of the same type. We'll build the small app on the screenshot below to execute this query:
+In the [multitask classification post](https://pauloesampaio.github.io/posts/2020-12-31-multitask_learning/) I mentioned how it should help the embedding, since the model takes into account all tasks and therefore would generate a more holistic vector representation of the image. That's exactly what we will test today. The model we trained is capable of detecting finish type, neckline and sleeve length. So if I have a vector of a striped long sleeved crew neckline dress on this space, the nearest vectors should also be products of the same type. We'll build the small app on the screenshot below to execute this sort queries:
 
 <figure style="width: 50%"  class="align-center">
 <img src="{{ page.s3_bucket }}/app.jpg" alt="">
@@ -31,13 +31,13 @@ In the [multitask classification post](https://pauloesampaio.github.io/posts/202
 
 ## But what is a match?
 
-I think before going any further, it is worth to give a step back and think about what even is a *product match*. What makes two garments be considered a match? Exact matches are clear, but what if we want to find similar. It need to be based on something. Here it will be dependent on our model. On the [multitask post](https://pauloesampaio.github.io/posts/2020-12-31-multitask_learning/) we trained a model that identifies finishes (striped, floral, plain, etc), sleeve length (sleeveless, long sleeves, short sleeves) and necklines (crew neck, v-neck and so on). So our similarity will be based on that. There is no colour, so if a garment is floral, v-neck and short sleeves, if our model finds garment with similar characteristics, it would be a match, regardless of the overall colour, fit or length of the garment.
+Before going any further, it is worth to give a step back and think about what even is a *product match*. What makes two garments be considered a match? Exact matches are clear, but what if we want to find similar. It need to be based on something. Here it will be dependent on our model. As stated earlier, we trained a model that identifies finishes (striped, floral, plain, etc), sleeve lengths (sleeveless, long sleeves, short sleeves) and necklines (crew neck, v-neck and so on). So our similarity will be based on these features. There is no colour, so if a garment is floral, v-neck and short sleeves, if our model finds garment with similar characteristics, it would be a match, not necessarily having the same colour, fit or overall length.
 
 <figure style="width: 50%"  class="align-center">
 <img src="{{ page.s3_bucket }}/floral.jpg" alt="">
 </figure>
 
-You want to also take colour or any other feature into account? There are a couple of ways to do it:
+You want to also take colour or any other feature into account? There are a couple of ways to do it. Let's use colour as an example:
 
 - Add colour classification to your multitask model
 - If you know beforehand the colour (as it is the case in many e-commerces), post process the results keeping only the desired colour
@@ -50,18 +50,17 @@ As explained, we'll use the same data and the model trained on the [multitask po
 - Data from the [deep fashion dataset](http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion/AttributePrediction.html), specifically all dresses and tops-like garments (shirts, t-shirts, blouses and so on).
 - Multitask convolutional neural network model trained to classify garment finishes (striped, embroidered, plain, etc), sleeve length (sleeveless, long sleeves, short sleeves, etc) and neckline (crew neck, v-neck, etc). Notice that there is no colour here.
 
-In order to get the vector representation, instead of the output of the classification layers, we'll get the input of these layers! The input is a 2048-dimensions vector that represents the input image. Each one of these 2048 dimensions is a feature that the classifier uses for its classification. So, in theory, this vector contains all the information needed for the classification to decide if a garment is a v-neck, long sleeves and striped or a crew neck, sleeveless plain garment. In order to get this intermediate result, we need to re-define the output of the model. We can achieve this by doing:
+In order to get the vector representation, instead of the output of the classification layers, we'll get the input of the classification layers! In our case, the input is a 2048-dimensions vector representation of the input image. Each one of these 2048 dimensions is a feature that the classifier uses for its classification. So, in theory, this vector contains all the information needed for the classification to decide if a garment is a v-neck, long sleeves and striped or a crew neck, sleeveless plain garment. In order to get this intermediate result, we need to re-define the output of the model. We can achieve this by doing:
 
 ```python
+model = load_model("TRAINED_MODEL_PATH")
 model = Model(
   inputs=model.input,
   outputs=[model.get_layer("CLF_LAYER_NAME").input],
     )
 ```
 
-Where model is your keras pre-trained model and CLF_LAYER_NAME is the name of your classification layer (and we want to get the input it is receiving).
-
-Then you can use this model to transform your images in vectors. Great!
+First we load our pre-trained model and then define that the input is the input of our model but the output is now the input of the CLF_LAYER_NAME.
 
 ## Approximate nearest neighbors
 
@@ -69,9 +68,9 @@ Now imagine that you get an image from an url, vectorize it (using the same mode
 
 If you have just a handful of images, it is fine, you can brute-force and calculate the distance to all vectors, order them and get the top-5. The challenge is when you have thousands or millions of images and you vectors space also have thousands of dimensions. In that case, which is the most common, calculate all the distances would be very computationally expensive, so we rely on approximate methods.
 
-This is in itself a research field and there are a couple of methods to do it. [This page](http://ann-benchmarks.com/) tracks all this algorithms and benchmarks them. First time I did this, probably in 2015 or 2016, [Spotify's annoy](https://github.com/spotify/annoy) was the best one and I love it, super easy to use. A couple of years later it was surpassed by [nmslib](https://github.com/nmslib/nmslib), which we'll be using in this project. [Faiss](https://github.com/facebookresearch/faiss) from Facebook is also great specially if you are running it on a GPU.
+This is in itself a research field and there are a couple of methods to do it. [This page](http://ann-benchmarks.com/) tracks all these algorithm's implementations and benchmarks them. First time I did this, probably in 2015 or 2016, [Spotify's annoy](https://github.com/spotify/annoy) was the best one and I love it, super easy to use. A couple of years later it was surpassed by [nmslib](https://github.com/nmslib/nmslib), which we'll be using in this project. [Faiss](https://github.com/facebookresearch/faiss) from Facebook is also great, specially if you are running it on a GPU.
 
-With nmslib, we'll use the [HNSW](https://arxiv.org/abs/1603.09320)(Hierarchical Navigable Small World) method. It works by building an index that can be queried afterwards. The image below, although from Faiss documentation (Facebook ai team is great with communication), explain the idea:
+With nmslib, we'll use the [HNSW](https://arxiv.org/abs/1603.09320)(Hierarchical Navigable Small World) method. It works by building an index that can be queried afterwards. The image below, although from Faiss documentation (Facebook ai team is great with communication), explains the idea:
 
 <figure style="width: 75%"  class="align-center">
 <img src="{{ page.s3_bucket }}/faiss.jpg" alt="">
@@ -101,21 +100,21 @@ Thats basically it!
 
 Starting with the `./config/config.yml`, where you define the variables needed. They are quite self explanatory, but let's go over a few:
 
-- images_dataframe_path: path to a dataframe with path to the images you want to vectorize
-- path_field: On the dataframe, which column contains the image path
-- trained_model_path: path to the trained model you'll use to vectorize the images
-- layer_to_get_input: from the trained model, where to get the vectors
-- ann_index: These are the nmslib parameters, detailed [here](https://github.com/nmslib/nmslib/blob/master/manual/methods.md). Specifically the `k` is the number of matches that will be returned
+- `images_dataframe_path`: path to a dataframe with path to the images you want to vectorize
+- `path_field`: On the `images_dataframe`, which column contains the image path
+- `trained_model_path`: path to the trained model you'll use to vectorize the images
+- `layer_to_get_input`: from the trained model, where to get the vectors
+- `ann_index`: These are the nmslib parameters, detailed [here](https://github.com/nmslib/nmslib/blob/master/manual/methods.md). Specifically the `k` is the number of matches that will be returned
 
-All right, now that you set the configuration, you can run `python build_index.py`. This will start by looking for the vectors. If the file doesn't exist yet, it will load the vectorizer model and go through all the images in the images_dataframe, vectorize them and save this vectors to the vectors_path. Once the vectors exist, it will build the approximate nearest neighbors index and save it to the desired path.
+All right, now that you set the configuration, you can run `python build_index.py`. This will start by looking for the `vectors`. If the file doesn't exist yet, it will load the `vectorizer model` and go through all the images in the `images_dataframe`, vectorize them and save this vectors to the `vectors_path`. Once the vectors exist, it will build the approximate nearest neighbors index and save it to the desired path.
 
 Then, you can run `streamlit run front_end.py` to run the web application where you can past an image url. The app will then:
 
 - loads the `ann_index`, `vectorizer_model`, `image_dataframe` and the calculated `vectors`
 - Once the user types an url, download the image from it
-- Vectorize the image using the vectorizer_model
-- Searches on the index the ids of the `k` nearest neighbors and the distances to this vectors
-- With the ids, searches on the `image_dataframe` for the paths of this neighbors
+- Vectorize the image using the `vectorizer_model`
+- Searches on the `index` the `ids` of the `k` nearest neighbors and the `distances` to this vectors
+- With the `ids`, searches on the `image_dataframe` for the paths of this neighbors
 - Loads and display them with the respective distance
 
 That's it!
