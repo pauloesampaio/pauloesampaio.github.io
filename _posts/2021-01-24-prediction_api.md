@@ -35,7 +35,6 @@ All right, so let's build an API! We'll use [FastAPI](https://fastapi.tiangolo.c
 ```python
 app = FastAPI()
 
-
 @app.get("/")
 def check_api():
     return {"API status": "Up and running!"}
