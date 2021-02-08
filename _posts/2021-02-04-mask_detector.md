@@ -96,6 +96,7 @@ I'm using [Adrian Rosebrock's imutils](https://github.com/jrosebr1/imutils) libr
 ```python
 from imutils.video import VideoStream
 from imutils.video import FPS
+import cv2
 
 vs = VideoStream(usePiCamera=True, 
                  framerate=30, 
@@ -107,9 +108,13 @@ fps = FPS().start()
 while True:
     # Get video frame
     frame = vs.read()
+    
+    # YOU CODE TO DEAL WITH THE FRAMES HERE
 
-# YOU CODE TO DEAL WITH THE FRAMES HERE
-
+    cv2.imshow("frame", frame)
+    if cv2.waitKey(1) & 0xFF == ord("q"):
+        break
+cv2.destroyAllWindows()
 vs.stop()
 ```
 
