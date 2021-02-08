@@ -26,7 +26,7 @@ repo_name: mask_detector
 
 {% include repo_card.html %}
 
-I had a [raspberry pi](https://www.raspberrypi.org/) laying around and thought it would be cool to do a face mask detector and alert system!
+I had a [raspberry pi](https://www.raspberrypi.org/) lying around and thought it would be cool to do a face mask detector and alert system!
 And it can also be quite useful too. Imagine like Uber or any taxi service. They could use it to monitor the driver and send an alert in case they are driving without a mask. Or even a co-working space, could be an interesting tool to guarantee that protocols are being followed.
 
 <img src="{{ page.s3_bucket }}/output.gif" alt="">
