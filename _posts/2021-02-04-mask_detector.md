@@ -203,3 +203,5 @@ I think that's pretty much all, just download the models, put them on the models
 ## Closing thoughts
 
 I love the Raspberry Pi and I am always thinking about fun ways I can use it. I might add the actual picture in the whatsapp message. Also, in terms of efficiency, probably it would be better to put the messaging service on an API, leaving the pi just to run the video stream.
+
+Hope you have fun with this project and let me know if you have any questions!
