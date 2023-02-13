@@ -51,7 +51,7 @@ social:
 #analytics:
 #  provider: "google"
 #  google:
-#    tracking_id: "UA-178010206-1"
+#    tracking_id: ""
 #    anonymize_ip: false # default
 
 # Site author
