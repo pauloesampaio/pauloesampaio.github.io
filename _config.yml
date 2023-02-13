@@ -48,11 +48,11 @@ social:
     - "https://www.facebook.com/paulo.ed"
 
 # Analytics
-analytics:
-  provider: "google"
-  google:
-    tracking_id: "UA-178010206-1"
-    anonymize_ip: false # default
+#analytics:
+#  provider: "google"
+#  google:
+#    tracking_id: "UA-178010206-1"
+#    anonymize_ip: false # default
 
 # Site author
 author:
