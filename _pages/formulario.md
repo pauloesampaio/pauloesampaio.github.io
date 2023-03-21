@@ -1,4 +1,8 @@
 ---
+permalink: /formulario/
+title: "Formulario"
+classes: wide
+template: null
 ---
 
 <!doctype html>
