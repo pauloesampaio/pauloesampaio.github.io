@@ -1,4 +1,8 @@
 ---
+title: "Formulario"
+excerpt: "Teste de formulario."
+sitemap: false
+permalink: /formulario.html
 layout: null
 ---
 <!DOCTYPE html>
