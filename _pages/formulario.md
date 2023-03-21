@@ -5,7 +5,6 @@ classes: wide
 template: null
 ---
 
-<!doctype html>
 <html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="no-js">
   <head>
 <!-- Google Tag Manager -->
