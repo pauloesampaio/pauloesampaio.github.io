@@ -5,7 +5,7 @@ pubDate: 2025-04-05
 description: "Based on text or image, find closest product on database."
 languages: []
 image:
-  url: "/src/content/staticData/pictures/text_image_search.png"
+  url: "/images/projects/text_image_search.png"
   alt: "Thumbnail of Astro arches."
 ---
 

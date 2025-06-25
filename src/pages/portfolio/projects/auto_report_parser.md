@@ -5,7 +5,7 @@ pubDate: 2025-04-05
 description: "Use LLM to extract structured output from free text reports"
 languages: []
 image:
-  url: "/src/content/staticData/pictures/medgemma.png"
+  url: "/images/projects/medgemma.png"
   alt: "Project thumbnail"
 github_repo: https://github.com/pauloesampaio/auto_report_parser
 ---

@@ -5,7 +5,7 @@ pubDate: 2025-04-05
 description: "LLM to automate the creation of product description tailored for your audience"
 languages: []
 image:
-  url: "/src/content/staticData/pictures/product_description.png"
+  url: "/images/projects/product_description.png"
   alt: "Project thumbnail"
 ---
 

@@ -5,7 +5,7 @@ pubDate: 2025-04-05
 description: "End-to-end pipeline for image detection, classification and alarm system"
 languages: []
 image:
-  url: "/src/content/staticData/pictures/mask_project.gif"
+  url: "/images/projects/mask_project.gif"
   alt: "Project thumbnail"
 ---
 

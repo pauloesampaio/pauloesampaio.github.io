@@ -5,7 +5,7 @@ pubDate: 2025-04-05
 description: "Teaching supervised learning using spotify playlist"
 languages: []
 image:
-  url: "/src/content/staticData/pictures/spotify.webp"
+  url: "/images/projects/spotify.webp"
   alt: "Project thumbnail"
 ---
 

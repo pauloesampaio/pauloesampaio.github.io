@@ -5,7 +5,7 @@ pubDate: 2025-04-05
 description: "Custom UNet and CNN for medical image segmentation and classification"
 languages: []
 image:
-  url: "/src/content/staticData/pictures/pola.png"
+  url: "/images/projects/pola.png"
   alt: "Project thumbnail"
 ---
 
