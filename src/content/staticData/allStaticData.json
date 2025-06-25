@@ -1,5 +1,5 @@
 {
-  "profileImage": "images/paulo_profile.png",
+  "profileImage": "/images/paulo_profile.png",
   "profileAlt": "Photo of Paulo Sampaio",
   "profileLink": "/about-me",
   "profileTitle": "Senior data scientist",
