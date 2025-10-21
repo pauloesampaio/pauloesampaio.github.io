@@ -39,5 +39,5 @@ A paper detailing part of this work — including our UNet-based segmentation pi
 ## 🌐 Resources
 
 👉 [Nature Scientific Reports (MLP Classifier)](https://www.nature.com/articles/s41598-023-43195-7)
-
-👉 I'll update this list as new papers are released (exp: July/August 2025)
+👉 [SPIE - Applications of Machine Learning 2025 (UNet multitask segmentation and classification)](https://www.spiedigitallibrary.org/conference-proceedings-of-spie/13606/1360614/Mueller-matrix-polarimetry-for-fresh-pancreatic-tissue-segmentation/10.1117/12.3064291.short)
+👉 I'll update this list as new papers are released (exp: November/December 2025)
